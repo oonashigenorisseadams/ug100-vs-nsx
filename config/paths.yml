@@ -1,0 +1,121 @@
+# ============================================================
+# config/paths.yml — Central path configuration
+# ============================================================
+# Edit this file once to match your local directory layout.
+# All scripts read from here via src.benchmark_utils.load_config()
+#
+# Paths can be absolute or relative to the project root.
+# ============================================================
+
+# --- Project root (set automatically if left as ".") ---
+project_root: "path/to/project_root"
+
+# --- Reference genome ---
+reference:
+  fasta: "path/to/reference.fna"
+  fasta_fai: "path/to/reference.fna.fai"
+  sdf: "path/to/reference_sdf"
+
+# --- GIAB truth set (NIST v4.2.1) ---
+truth:
+  vcf: "path/to/truth_benchmark.vcf.gz"
+  bed: "path/to/truth_benchmark.bed"
+
+# --- UG High Confidence Regions ---
+ug_hcr:
+  bed: "path/to/ug_hcr.bed"
+
+# --- Homopolymer annotations ---
+homopolymer:
+  bed_dir: "path/to/homopolymer_beds"  # contains HP_len_XXXX.bed.gz
+
+# --- Callsets: NovaSeq X 25B (DRAGEN 4.4, downsampled to 35x) ---
+# Used for accuracy benchmarking (Figs 1-5) and reproducibility (Fig 6A)
+novaseqx_vcfs:
+  - label: "NovaSeqX_rep1"
+    vcf: "path/to/NovaSeqX-rep1.vcf.gz"
+  - label: "NovaSeqX_rep2"
+    vcf: "path/to/NovaSeqX-rep2.vcf.gz"
+  - label: "NovaSeqX_rep3"
+    vcf: "path/to/NovaSeqX-rep3.vcf.gz"
+
+# --- Callsets: NovaSeq X 10B (DRAGEN 4.4, downsampled to 35x) ---
+# Used ONLY for reproducibility (Fig 6A) to reach 5 total NovaSeq X reps.
+# Per Supplementary Note 6: "we selected another HG002 library sequenced
+# on 2 sequencing runs on 10B flowcells."
+novaseqx_10b_vcfs:
+  - label: "NovaSeqX_10B_rep1"
+    vcf: "path/to/NovaSeqX-10B-rep1.vcf.gz"
+  - label: "NovaSeqX_10B_rep2"
+    vcf: "path/to/NovaSeqX-10B-rep2.vcf.gz"
+
+# --- Callsets: UG 100 (AWS Ready2Run DeepVariant v1.0, merged to ~35x) ---
+ug100_vcfs:
+  - label: "UG_Sample_1"
+    vcf: "path/to/ug_sample_1.vcf.gz"
+  - label: "UG_Sample_2"
+    vcf: "path/to/ug_sample_2.vcf.gz"
+  - label: "UG_Sample_3"
+    vcf: "path/to/ug_sample_3.vcf.gz"
+  - label: "UG_Sample_4"
+    vcf: "path/to/ug_sample_4.vcf.gz"
+  - label: "UG_Sample_5"
+    vcf: "path/to/ug_sample_5.vcf.gz"
+
+# --- Callsets: UG 100 ppmSeq (AWS Ready2Run DeepVariant v1.0, merged to ~35x) ---
+ug100_ppmseq_vcfs:
+  - label: "UG_ppmSeq_rep1"
+    vcf: "path/to/ppmSeq_rep1.vcf.gz"
+  - label: "UG_ppmSeq_rep2"
+    vcf: "path/to/ppmSeq_rep2.vcf.gz"
+
+# --- Callsets: UG 100 ppmSeq duplex only (AWS Ready2Run DeepVariant v1.0) ---
+ug100_ppmseq_duplex_vcfs:
+  - label: "UG_ppmSeq_duplex_rep1"
+    vcf: "path/to/ppmSeq_duplex_rep1.vcf.gz"
+  - label: "UG_ppmSeq_duplex_rep2"
+    vcf: "path/to/ppmSeq_duplex_rep2.vcf.gz"
+
+# --- BAMs/CRAMs for read-level analyses ---
+novaseqx_bams:
+  dir: "path/to/novaseqx_bams"
+  pattern: "*.bam"
+
+ug100_crams:
+  dir: "path/to/ug_crams"
+  pattern: "*.cram"
+
+ug100_ppmseq_crams:
+  dir: "path/to/ug_ppmseq_crams"
+  pattern: "*.cram"
+
+ug100_ppmseq_duplex_crams:
+  dir: "path/to/ug_ppmseq_duplex_crams"
+  pattern: "*.cram"
+
+# --- Clinical impact data ---
+clinical:
+  clinvar_vcf: "path/to/clinvar.vcf.gz"
+  tandem_repeat_bed: "path/to/tandem_repeats.bed"
+
+# --- Tools ---
+tools:
+  happy_sif: "path/to/containers/happy.sif"
+  happy_threads: 20
+
+# --- SLURM defaults ---
+slurm:
+  partition: "partition_name"
+  log_dir: "path/to/logs"
+
+# --- Output directories ---
+outputs:
+  fig1: "path/to/results/fig1"
+  fig2: "path/to/results/fig2"
+  fig3: "path/to/results/fig3"
+  fig4: "path/to/results/fig4"
+  fig5: "path/to/results/fig5"
+  fig6a: "path/to/results/fig6a"
+  fig6b: "path/to/results/fig6b"
+  clinical: "path/to/results/clinical"
+  samtools_stats: "path/to/results/samtools_stats"

@@ -115,4 +115,4 @@ config and resolve paths automatically.
 - UG 100 ppmSeq: 2 runs, ppmSeq chemistry, DeepVariant, ~35x
 - UG 100 ppmSeq duplex: duplex reads extracted from ppmSeq (st=et="MIXED"), ~35x
 
-Data access: SRA BioProject PRJNA1427896 [Release 03/13/2026]
+## Data access: SRA BioProject PRJNA1427896 [Release 03/13/2026]

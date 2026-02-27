@@ -1,7 +1,6 @@
 # UG 100 vs NovaSeq X Whole-Genome Benchmarking
 
-Reproducibility code for: **"Whole-genome benchmarking reveals large, context-specific
-error rates in Ultima UG100 compared to Illumina NovaSeq X."**
+Reproducibility code for: **"Whole-genome benchmarking reveals context-specific error rates in the Ultima UG100 and Illumina NovaSeqX Platforms."**
 
 ## Quick Start
 
